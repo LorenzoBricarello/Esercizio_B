@@ -37,6 +37,10 @@ int main()
         shapes[i]->Dump();
     }
 
+
+    shapes[2]->Scale(2);
+    shapes[2]->Dump();
+
     for (int i = 0; i < nShapes; i++) {
         if (shapes[i] != nullptr) delete shapes[i];
     }
