@@ -9,7 +9,7 @@
 #include "CShape.h"
 
 /// @class IsoscelesTriangle
-/// @brief to manage an object with the shape of a IsoscelesTriangle
+/// @brief to manage an object with the shape of an isosceles triangle
 class IsoscelesTriangle : public Shape
 {
 public:
@@ -47,7 +47,7 @@ public:
 
     /// @name DEBUG and SERIALIZATION
     /// @{
-    virtual void Dump();
+    void Dump();
     /// @}
 };
 

@@ -22,7 +22,7 @@ int main()
     shapes[nShapes++] = new Rhombus(2, 2, 10, 6);
     shapes[nShapes++] = new IsoscelesTriangle(5, 1, 20, 7);
 
-
+     
     // 2. Impostazione testo
     shapes[0]->SetText("rettangolo");
     shapes[1]->SetText("rombo");
@@ -37,11 +37,17 @@ int main()
         shapes[i]->Dump();
     }
 
-
-    shapes[2]->Scale(2);
-    shapes[2]->Dump();
+    // 5. Test function Scale
+    cout << endl << "===== TEST SCALE(5x) =====" << endl;
 
     for (int i = 0; i < nShapes; i++) {
+        cout << endl << "Figura [" << i << "]" << endl;
+        shapes[i]->Scale(5);
+        shapes[i]->Dump();
+    }
+    
+    // 6. Chiamata dinamica a distruttori polimorfici (virtual ~Shape)
+    for (int i = 0; i < nShapes; i++) { 
         if (shapes[i] != nullptr) delete shapes[i];
     }
 

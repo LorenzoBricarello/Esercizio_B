@@ -66,7 +66,7 @@ bool Rhombus::operator==(const Rhombus& r)
 }
 
 /* ----------------------------
-   BASIC HANDLING
+          BASIC HANDLING
    ---------------------------- */
 
    /// @brief default initialization of the object
@@ -89,7 +89,7 @@ void Rhombus::Reset()
 }
 
 /* ----------------------------
-   GETTERS
+             GETTERS
    ---------------------------- */
 
    /// @brief to get the horizontal diagonal of the rhombus
@@ -151,7 +151,7 @@ void Rhombus::Dump()
 
     Shape::Dump();
 
-
+    cout << "  Rhombus side:         " << GetSide() << endl;
     cout << "  Figure area:         " << GetArea() << endl;
     cout << "  Figure perimeter:    " << GetPerimeter() << endl;
     cout << "  Text:                " << (text ? text : "(null)") << endl;

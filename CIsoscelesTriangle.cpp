@@ -5,11 +5,12 @@
 
 #include "CIsoscelesTriangle.h"
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
 /* ----------------------------
-   CONSTRUCTORS / DESTRUCTOR
+    CONSTRUCTORS / DESTRUCTOR
    ---------------------------- */
 
    /// @brief default constructor
@@ -42,12 +43,12 @@ IsoscelesTriangle::~IsoscelesTriangle()
 }
 
 /* ----------------------------
-   OPERATORS
+            OPERATORS
    ---------------------------- */
 
-   /// @brief overload of operator = 
-   /// @param r reference to the object on the right side of the operator 
-   /// @return reference to the object on the left side of the operator
+/// @brief overload of operator = 
+/// @param r reference to the object on the right side of the operator 
+/// @return reference to the object on the left side of the operator
 IsoscelesTriangle& IsoscelesTriangle::operator=(const IsoscelesTriangle& r)
 {
     if (this != &r)
@@ -65,7 +66,7 @@ bool IsoscelesTriangle::operator==(const IsoscelesTriangle& r)
 }
 
 /* ----------------------------
-   BASIC HANDLING
+          BASIC HANDLING
    ---------------------------- */
 
    /// @brief default initialization of the object
@@ -89,50 +90,50 @@ void IsoscelesTriangle::Reset()
 
 
 /* ----------------------------
-   GETTERS
+             GETTERS
    ---------------------------- */
 
-   /// @brief to get the height of the IsoscelesTriangle
-   /// @return height
+/// @brief to get the height of the isosceles triangle
+/// @return height
 float IsoscelesTriangle::GetHeight()
 {
     return height;
 
 }
 
-/// @brief to get the oblique side of the IsoscelesTriangle
-/// @return width
+/// @brief to get the oblique side of the isosceles triangle
+/// @return Oblique side
 float IsoscelesTriangle::GetOSide()
 {
-    return sqrt((height * height) + ((width / 2) * (width / 2)));
+    return sqrt((height * height) + ((width / 2.) * (width / 2.)));
 }
 
-/// @brief to get the horizontal side of the IsoscelesTriangle
+/// @brief to get the horizontal side of the isosceles triangle
 /// @return width
 float IsoscelesTriangle::GetHSide()
 {
     return width;
 }
 
-/// @brief computes the area of the IsoscelesTriangle
+/// @brief computes the area of the isosceles triangle
 /// @return area 
 float IsoscelesTriangle::GetArea()
 {
-    return (width * height)/2;
+    return (width * height)/2.;
 }
 
-/// @brief computes the perimeter of the IsoscelesTriangle
+/// @brief computes the perimeter of the isosceles triangle
 /// @return perimeter 
 float IsoscelesTriangle::GetPerimeter()
 {
-    return (width + GetOSide()*2);
+    return (width + GetOSide()*2.);
 }
 
 /* ----------------------------
-   DEBUG and SERIALIZATION
+      DEBUG and SERIALIZATION
    ---------------------------- */
 
-   /// @brief for debugging: all infos about the object
+/// @brief for debugging: all infos about the object
 void IsoscelesTriangle::Dump()
 {
     cout << endl << "----------------------" << endl;
@@ -140,7 +141,7 @@ void IsoscelesTriangle::Dump()
 
     Shape::Dump();
 
-
+    cout << "  Oblique side:         " << GetOSide() << endl;
     cout << "  Figure area:         " << GetArea() << endl;
     cout << "  Figure perimeter:    " << GetPerimeter() << endl;
     cout << "  Text:                " << (text ? text : "(null)") << endl;

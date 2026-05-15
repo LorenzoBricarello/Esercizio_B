@@ -1,6 +1,6 @@
 /*! \file CShape.cpp
     \brief implementation of class Shape
-    \author Paolo Gastaldo
+    \author Lorenzo Bricarello
 */
 
 #include "CShape.h"
@@ -25,7 +25,7 @@ static void SafeStrCopy(char* dest, const char* src, size_t destSize) {
 /* ----------------------------
    CONSTRUCTORS / DESTRUCTOR
    ---------------------------- */
-   /// @brief default constructor 
+/// @brief default constructor 
 Shape::Shape()
 {
 
@@ -71,7 +71,7 @@ Shape::~Shape()
 }
 
 /* ----------------------------
-   OPERATORS
+            OPERATORS
    ---------------------------- */
 
    /// @brief overload of operator = 
@@ -120,7 +120,7 @@ bool Shape::operator==(const Shape& r)
 }
 
 /* ----------------------------
-   BASIC HANDLING
+        BASIC HANDLING
    ---------------------------- */
 
    /// @brief default initialization of the object
@@ -163,7 +163,8 @@ void Shape::Init(const Shape& r)
 /// @brief total reset of the object  
 void Shape::Reset()
 {
-    if (text != nullptr) {
+    if (text != nullptr)
+    {
         delete[] text;
         text = nullptr;
     }
@@ -174,14 +175,13 @@ void Shape::Reset()
 }
 
 /* ----------------------------
-   FORMATTING
+            FORMATTING
    ---------------------------- */
 
-   /// @brief to rescale the shape without changing the aspect ratio
-   /// @param sf scale factor (1.0 = 100%, no changes)
-
+/// @brief to rescale the shape without changing the aspect ratio
+/// @param sf scale factor (1.0 = 100%, no changes)
 void Shape::Scale(float sf)
-{
+{   
     SetWidth(sf * width);
     SetHeight(sf * height);
 }
@@ -208,7 +208,6 @@ void Shape::SetPosition(float px, float py)
     }
     else
         y = py;
-
 }
 
 /// @brief set height of the object

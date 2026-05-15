@@ -52,7 +52,7 @@ public:
     void Reset();
     /// @}
 
-    /// @name FOMATTING
+    /// @name FORMATTING
     /// @{
     void Scale(float sf);
     /// @}
