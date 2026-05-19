@@ -26,7 +26,7 @@ Rhombus::Rhombus() : Shape()
 /// @param h height of the bounding box
 Rhombus::Rhombus(float px, float py, float w, float h) : Shape(px, py, w, h)
 {
-    cout << "Rhombus - constructor" << endl;
+    cout << "Rhombus - init constructor" << endl;
 }
 
 /// @brief copy constructor
@@ -43,12 +43,12 @@ Rhombus::~Rhombus()
 }
 
 /* ----------------------------
-   OPERATORS
+            OPERATORS
    ---------------------------- */
 
-   /// @brief overload of operator = 
-   /// @param r reference to the object on the right side of the operator 
-   /// @return reference to the object on the left side of the operator
+/// @brief overload of operator = 
+/// @param r reference to the object on the right side of the operator 
+/// @return reference to the object on the left side of the operator
 Rhombus& Rhombus::operator=(const Rhombus& r)
 {
     if (this != &r)

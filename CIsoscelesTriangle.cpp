@@ -26,7 +26,7 @@ IsoscelesTriangle::IsoscelesTriangle() : Shape()
 /// @param h height of the bounding box
 IsoscelesTriangle::IsoscelesTriangle(float px, float py, float w, float h) : Shape(px, py, w, h)
 {
-    cout << "IsoscelesTriangle - constructor" << endl;
+    cout << "IsoscelesTriangle - init constructor" << endl;
 }
 
 /// @brief copy constructor
@@ -108,9 +108,9 @@ float IsoscelesTriangle::GetOSide()
     return sqrt((height * height) + ((width / 2.) * (width / 2.)));
 }
 
-/// @brief to get the horizontal side of the isosceles triangle
-/// @return width
-float IsoscelesTriangle::GetHSide()
+/// @brief to get the base of the isosceles triangle
+/// @return base
+float IsoscelesTriangle::GetBase()
 {
     return width;
 }

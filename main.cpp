@@ -33,25 +33,40 @@ int main()
     cout << endl << "===== DUMP POLIMORFICO =====" << endl;
 
     for (int i = 0; i < nShapes; i++) {
-        cout << endl << "Figura [" << i << "]" << endl;
+        cout << endl << "Figura [" << i << "]";
         shapes[i]->Dump();
+        cout << endl;
     }
 
-    // 5. Test function Scale
+    // 5. Test function Scale()
     cout << endl << "===== TEST SCALE(5x) =====" << endl;
 
     for (int i = 0; i < nShapes; i++) {
-        cout << endl << "Figura [" << i << "]" << endl;
-        shapes[i]->Scale(5);
+        cout << endl << "Figura [" << i << "]";
+        shapes[i]->Scale(5.);
         shapes[i]->Dump();
+        cout << endl;
     }
+
+    // 6. Test function Scale() WARNING
+    cout << endl << "Figura [2] - Warning test" << endl;
+    shapes[2]->Scale(-10.2);
+    shapes[2]->Dump();
     
-    // 6. Chiamata dinamica a distruttori polimorfici (virtual ~Shape)
+    // 7. Chiamata dinamica a distruttori polimorfici (virtual ~Shape)
     for (int i = 0; i < nShapes; i++) { 
-        if (shapes[i] != nullptr) delete shapes[i];
+        if (shapes[i] != nullptr) {
+            delete shapes[i];
+            shapes[i] = nullptr;
+        }
     }
 
     cout << endl << "===== FINE TEST =====" << endl;
 
+ 
+    
     return 0;
 }
+
+//array di puntatori a shape che punterà attraverrso il polimorfismo alle funzioni giusto del sottopoligono
+//verificare coerenza input utente

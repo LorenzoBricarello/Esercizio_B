@@ -25,7 +25,7 @@ Rectangle::Rectangle() : Shape()
 /// @param h height of the bounding box
 Rectangle::Rectangle(float px, float py, float w, float h) : Shape(px, py, w, h)
 {
-    cout << "Rectangle - constructor" << endl;
+    cout << "Rectangle - init constructor" << endl;
 }
 
 /// @brief copy constructor

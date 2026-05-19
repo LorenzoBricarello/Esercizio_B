@@ -34,7 +34,7 @@ public:
     Shape(float px, float py, float w, float h);
     Shape(const Shape& r);
 
-    virtual ~Shape();
+    virtual ~Shape(); //modified destructor to be virtual
     /// @}
 
 
@@ -59,7 +59,6 @@ public:
 
     /// @name GETTERS / SETTERS
     /// @{
-
     void SetPosition(float px, float py);
     void SetHeight(float h);
     void SetWidth(float w);
@@ -81,7 +80,6 @@ public:
 
     virtual float GetPerimeter() = 0;
     virtual float GetArea() = 0;
-
     /// @}
 
 

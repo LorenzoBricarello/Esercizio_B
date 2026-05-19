@@ -42,7 +42,7 @@ Shape::Shape()
 /// @param h height of the bounding box
 Shape::Shape(float px, float py, float w, float h)
 {
-    cout << "Shape - constructor" << endl;
+    cout << "Shape - init constructor" << endl;
 
     text = nullptr;
     Init();
@@ -182,12 +182,17 @@ void Shape::Reset()
 /// @param sf scale factor (1.0 = 100%, no changes)
 void Shape::Scale(float sf)
 {   
+    if (sf < 0.) {
+        WarningMessage("Scale(): Negative scale factor - set to 1");
+        sf = 1.;
+    }
     SetWidth(sf * width);
     SetHeight(sf * height);
+    cout << endl << "Scaled bounding box by a factor of: " << sf << endl;
 }
 
 /* ----------------------------
-   GETTERS / SETTERS
+        GETTERS / SETTERS
    ---------------------------- */
 
    /// @brief set position of the object
@@ -329,7 +334,7 @@ void Shape::GetText(char* string)
 }
 
 /* ----------------------------
-   DEBUG and SERIALIZATION
+      DEBUG and SERIALIZATION
    ---------------------------- */
 
    /// @brief write an error message 
@@ -343,7 +348,7 @@ void Shape::ErrorMessage(const char* string)
 /// @param string message to be printed
 void Shape::WarningMessage(const char* string)
 {
-    std::cerr << "[Shape - WARNING] " << (string ? string : "(null)") << std::endl;
+    std::cerr << "[Shape - WARNING] >>" << (string ? string : "(null)") << std::endl;
 }
 
 /// @brief for debugging: all infos about the object

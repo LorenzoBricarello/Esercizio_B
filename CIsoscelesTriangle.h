@@ -40,7 +40,7 @@ public:
     /// @{
     float GetHeight();
     float GetOSide();
-    float GetHSide();
+    float GetBase();
     float GetArea();
     float GetPerimeter();
     /// @}
